@@ -12,7 +12,7 @@ export const swapETHToTokenEcho = async(addressToken, privateKey) => {
     const amount = await getTrueAmount(info.rpcLinea, address, 'Swap');
     const gasPrice = await getTrueGasPrice(info.rpcLinea);
     if (amount < Number (process.env.Min_ETH_Remaining)) {
-        log('info', `Balance ${ticker} < ${process.env.Min_ETH_Remaining}. Skip this wallet`, 'red');
+        log('info', ` ETH balance < ${process.env.Min_ETH_Remaining}. Skip this wallet`, 'red');
         return;
     }
     await dataSwapETHToToken(addressToken, amount, address, info.slippageSwap).then(async(res) => {
