@@ -2,6 +2,8 @@ import { getNameKey, info, log, privateToAddress, timeout } from "../src/other.j
 import { getTrueAmount, getTrueGasPrice } from "./other.js";
 import { checkAllowance, dataApprove, fromWei, getAmountToken, getDecimal, sendEVMTX } from "../src/web3.js";
 import { dataSwapETHToToken, dataSwapTokenToETH } from "../src/echoDex.js";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 export const swapETHToTokenEcho = async(addressToken, privateKey) => {
     const address = privateToAddress(privateKey);
